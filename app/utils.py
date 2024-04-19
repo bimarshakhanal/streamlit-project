@@ -37,5 +37,5 @@ def add_department(deptno, name, location,):
         name: str - Department name
         location: str - Location of department
     '''
-    with open(EMPLOYEE_CSV, 'a', encoding='utf-8') as emp_csv:
-        emp_csv.write(f'\n{deptno}, {name}, {location}')
+    with open(DEPARTMENT_CSV, 'a', encoding='utf-8') as dept_csv:
+        dept_csv.write(f'\n{deptno}, {name}, {location}')
