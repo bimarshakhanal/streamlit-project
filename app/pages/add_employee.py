@@ -12,13 +12,14 @@ emp_ids = emp_df['Empno'].unique().tolist()
 dept_df = pd.read_csv('dept.csv')
 dept_to_id = dict(zip(dept_df['Department Name'], dept_df['Deptno']))
 
-employee_number = st.number_input('Employee number', format='%d', step=1)
-employee_name = st.text_input("Employee name")
-employee_job = st.text_input("Employee job")
-employee_department = st.selectbox(
-    label='Department', options=dept_to_id.keys())
+with st.form(clear_on_submit=True, key='new-emp-form'):
+    employee_number = st.number_input('Employee number', format='%d', step=1)
+    employee_name = st.text_input("Employee name")
+    employee_job = st.text_input("Employee job")
+    employee_department = st.selectbox(
+        label='Department', options=dept_to_id.keys())
 
-submit = st.button(label='Submit')
+    submit = st.form_submit_button(label='Submit')
 if submit:
     if not all([employee_number, employee_name, employee_job, employee_department]):
         st.error("Please fill in all fields.")
