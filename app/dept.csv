@@ -1,2 +1,5 @@
 Deptno,Department Name,Location
-100, AI, 2nd Floor
+100,AI,2nd Floor
+10,Account,NEW YORK
+20,RESEARCH,DALLAS
+30,SALES,CHICAGO

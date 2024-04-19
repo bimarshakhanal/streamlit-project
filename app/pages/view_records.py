@@ -6,7 +6,6 @@ st.info('View employee records')
 
 dept_df = pd.read_csv('dept.csv')
 employee_df = pd.read_csv('employee.csv')
-print(dept_df.columns)
 combined_df = employee_df.join(
     dept_df.set_index('Deptno'), on='Deptno', how='left')
 
